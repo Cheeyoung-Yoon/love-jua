@@ -1,0 +1,7 @@
+{
+  "name": "zustand",
+  "version": "4.5.5-local",
+  "type": "module",
+  "main": "index.js",
+  "types": "index.d.ts"
+}

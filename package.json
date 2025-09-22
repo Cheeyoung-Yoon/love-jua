@@ -11,7 +11,12 @@
   "dependencies": {
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.5.3"
+    "next": "15.5.3",
+    "framer-motion": "file:packages/framer-motion",
+    "@use-gesture/react": "file:packages/use-gesture-react",
+    "zustand": "file:packages/zustand",
+    "react-markdown": "file:packages/react-markdown",
+    "remark": "file:packages/remark"
   },
   "devDependencies": {
     "typescript": "^5",

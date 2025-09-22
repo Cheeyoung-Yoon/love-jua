@@ -1,0 +1,7 @@
+{
+  "name": "react-markdown",
+  "version": "9.0.3-local",
+  "type": "module",
+  "main": "index.js",
+  "types": "index.d.ts"
+}
