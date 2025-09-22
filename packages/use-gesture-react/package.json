@@ -1,0 +1,7 @@
+{
+  "name": "@use-gesture/react",
+  "version": "10.3.1-local",
+  "type": "module",
+  "main": "index.js",
+  "types": "index.d.ts"
+}

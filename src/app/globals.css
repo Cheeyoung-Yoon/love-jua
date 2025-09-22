@@ -1,13 +1,159 @@
+@import "tailwindcss";
+
 :root {
-  --bg-beige: #f2e6d2;
-  --paper: #f7f0e3;
-  --ink: #231f1a;
-  --gold: #d6b162;
-  --gold-deep: #b89238;
-  --scroll-black: #14100f;
-  --scroll-cream: #f4efe4;
+  --bg: #fdfaf2;
+  --paper: #faf6ee;
+  --ink: #2b2b2b;
+  --gold: #caa84f;
+  --accent: #151515;
+  --rose: #b0122b;
 }
-* { box-sizing: border-box; }
-html, body { margin:0; height:100%; background:var(--bg-beige); color:var(--ink); }
-body { font-family: ui-serif, "Iowan Old Style", "Nanum Myeongjo", serif; }
-button { font-family: inherit; }
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+body {
+  font-family: "Noto Serif KR", serif;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+}
+
+.silk-frame {
+  background-color: var(--accent);
+  background-image:
+    linear-gradient(125deg, rgba(255, 255, 255, 0.18), transparent 45%, rgba(255, 255, 255, 0.12) 60%, transparent),
+    repeating-linear-gradient(
+      140deg,
+      rgba(202, 168, 79, 0.18) 0px,
+      rgba(202, 168, 79, 0.18) 6px,
+      rgba(21, 21, 21, 0.85) 6px,
+      rgba(21, 21, 21, 0.85) 14px
+    );
+  background-size: 100% 100%, 280px 280px;
+  border-radius: 32px;
+  border: 1px solid rgba(202, 168, 79, 0.4);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 14px 32px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.silk-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 30% 30%, rgba(255, 236, 179, 0.18), transparent 60%),
+    repeating-conic-gradient(
+      from 0deg,
+      rgba(202, 168, 79, 0.15) 0deg 10deg,
+      transparent 10deg 20deg
+    );
+  opacity: 0.18;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.paper-surface {
+  background: var(--paper);
+  background-image:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 0, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0.02) 50%, rgba(0, 0, 0, 0) 75%),
+    repeating-linear-gradient(0deg, rgba(110, 86, 52, 0.08) 0 2px, transparent 2px 5px),
+    radial-gradient(circle at 50% 50%, rgba(255, 247, 232, 0.7), transparent 65%);
+  background-size: 280px 100%, 100% 12px, 100% 100%;
+  background-blend-mode: soft-light, multiply, normal;
+  box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.13);
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.paper-surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.015) 0 1px, transparent 1px 3px);
+  opacity: 0.45;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.paper-surface::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.55), transparent 65%);
+  pointer-events: none;
+}
+
+.scrollbar-gold::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scrollbar-gold::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(202, 168, 79, 0.9), rgba(133, 110, 49, 0.85));
+  border-radius: 999px;
+}
+
+.scrollbar-gold::-webkit-scrollbar-track {
+  background: rgba(21, 21, 21, 0.12);
+  border-radius: 999px;
+}
+
+.rose-bloom {
+  width: 124px;
+  height: 124px;
+  border-radius: 9999px;
+  background:
+    radial-gradient(circle at 35% 30%, rgba(255, 210, 220, 0.95), rgba(176, 18, 43, 0.75) 55%, rgba(70, 5, 18, 0.85)),
+    repeating-conic-gradient(
+      from 0deg,
+      rgba(255, 240, 245, 0.3) 0deg 18deg,
+      transparent 18deg 36deg
+    );
+  box-shadow: 0 18px 28px rgba(176, 18, 43, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.rose-bloom::after {
+  content: "";
+  position: absolute;
+  inset: 12%;
+  border-radius: 9999px;
+  background:
+    radial-gradient(circle at 40% 40%, rgba(255, 225, 232, 0.65), transparent 70%),
+    repeating-conic-gradient(
+      from 0deg,
+      rgba(176, 18, 43, 0.35) 0deg 20deg,
+      transparent 20deg 40deg
+    );
+  filter: blur(1px);
+  opacity: 0.8;
+}
+
+.live-region {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
